@@ -3,7 +3,7 @@ tasks = []
 
 def show_task():
     if len(tasks) == 0:
-        print("NO tak in the list")
+        print("NO task in the list")
     else:
         print("\nYour Tasks:")
         for i, task in enumerate(tasks, start=1):
@@ -32,7 +32,8 @@ while True:
         show_task()
         try:
             task_num = int(input("Enter task number to remove:"))
-            if 1 <= task_num <= len(tasks):
+            if(task_num > 0 and task_num<=len(tasks)):
+            # if 1 <= task_num <= len(tasks):
                 removed = tasks.pop(task_num - 1)
                 print(f"Removed task: {removed}")
             else:
@@ -42,7 +43,6 @@ while True:
     elif choice == "4":
         print("Goodbye!")
         break
-
     else:
         print("Invalid Choice,Please try again!")
 
